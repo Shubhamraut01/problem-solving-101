@@ -9,7 +9,7 @@ while (decimal > 0) {
     let rem = decimal % 2;
     decimal = Math.floor(decimal / 2);
     binary = rem + binary;
-
+    
 }
 
 console.log("binary", binary)

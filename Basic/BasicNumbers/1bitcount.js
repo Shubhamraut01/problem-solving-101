@@ -1,18 +1,30 @@
+// var hammingWeight = function(n) {
+//     let output = 0
+//     let string = n.toString(2)
+//     console.log("no",n)
+//     console.log("string", string)
+//     for(let i=0;i<string.length;i++){
+//         if(string.endsWith('1')){
+//             output = output+1;
+//         }
+//     }
+//     console.log("output", output)
+//     return output
+// };
+// n = 11
 var hammingWeight = function(n) {
     let output = 0
-    let string = n.toString(2)
-    console.log("no",n)
-    console.log("string", string)
-    for(let i=0;i<string.length;i++){
-        if(string[i]==1){
-            output = output+1;
+    while(n != 0){
+        let lastbit = n & 1;
+        if(lastbit == 1){
+            output++
         }
+        n = n >> 1;
     }
     console.log("output", output)
     return output
 };
 n = 11
-
 hammingWeight(n);
 
 // Write a function that takes the binary representation of an unsigned integer and returns the number of '1' bits it has (also known as the Hamming weight).
